@@ -43,7 +43,7 @@ public class Sampler : MonoBehaviour
 
     private List<NoteDestroy> playingNotes;
 
-    private bool sustain = false;
+    private bool sustain = true;
 
 
 

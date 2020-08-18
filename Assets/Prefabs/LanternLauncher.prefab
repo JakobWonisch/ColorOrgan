@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7229238301970971890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7229238301970971892}
+  - component: {fileID: 7229238301970971891}
+  m_Layer: 0
+  m_Name: LanternLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7229238301970971892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229238301970971890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7229238301970971891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229238301970971890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c36a9fa4e032149ab6fbd53ec93912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanternPrefab: {fileID: 655380321297175221, guid: 9410ca1ec18eda9488d4ac438974ab92,
+    type: 3}
+  materials:
+  - {fileID: 2100000, guid: a48235196326bbc428a530536e717f5a, type: 2}
+  - {fileID: 2100000, guid: 8995f5072a060dc4e895cca2024faa24, type: 2}
+  - {fileID: 2100000, guid: 9693b9d5cf6b5464a9dddbd344b02025, type: 2}
+  - {fileID: 2100000, guid: 90d582cad9552aa4081852359dccc001, type: 2}
+  - {fileID: 2100000, guid: 777e5f9f7930a054680d45f42364e895, type: 2}
+  - {fileID: 2100000, guid: e12f686b13c01534992e2af0616ea2f0, type: 2}
+  - {fileID: 2100000, guid: 440ac65279230f94a9059a5b7deeca00, type: 2}
+  - {fileID: 2100000, guid: a9848845ee667904db277936148a7299, type: 2}
+  - {fileID: 2100000, guid: 7ba26d7abb7aae9438add075e13d32fc, type: 2}
+  - {fileID: 2100000, guid: 6671899d57b7f404b92e111a5981611e, type: 2}
+  - {fileID: 2100000, guid: 55cc8b5980f14fe499eb386721f4d2ee, type: 2}
+  - {fileID: 2100000, guid: 00829514bfacbfd4b80337a94af43d65, type: 2}
+  spawn: {fileID: 0}
+  maxLanterns: 1000

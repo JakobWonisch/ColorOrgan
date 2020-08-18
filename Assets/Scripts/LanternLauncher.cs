@@ -8,6 +8,7 @@ public class LanternLauncher : MonoBehaviour
     public GameObject lanternPrefab;
     public Material[] materials;
 
+    public Transform mainCamera;
     public BoxCollider spawn;
 
     public int maxLanterns = 1000;
@@ -31,7 +32,7 @@ public class LanternLauncher : MonoBehaviour
         // pick random point in spawn
         Vector3 rand = spawn.size;
         rand.Scale(new Vector3(Random.Range(0f, 1f) -0.5f, Random.Range(0f, 1f) - 0.5f, Random.Range(0f, 1f) - 0.5f));
-        rand += spawn.center + Camera.main.transform.position;
+        rand += spawn.center + mainCamera.position;
         
         GameObject go = Instantiate(lanternPrefab, rand, Quaternion.identity, transform);
         // go.transform.GetChild(0).GetComponent<MeshRenderer>().material = materials[n % materials.Length];
