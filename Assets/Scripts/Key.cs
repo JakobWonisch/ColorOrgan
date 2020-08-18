@@ -6,6 +6,9 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
 
+    [HideInInspector]
+    public int note = 36;
+
     private Sampler sampler;
     private Transform controllerLeft, controllerRight;
     private Vector3 lastLeft, lastRight, deltaLeft, deltaRight;
@@ -16,6 +19,8 @@ public class Key : MonoBehaviour
         sampler = GameObject.Find("Piano").GetComponent<Sampler>();
         controllerLeft = GameObject.Find("Controller (left)").transform;
         controllerRight = GameObject.Find("Controller (right)").transform;
+
+        Debug.Log("Sampler: " + sampler);
 
         lastLeft = controllerLeft.position;
         lastRight = controllerRight.position;
@@ -43,12 +48,12 @@ public class Key : MonoBehaviour
         if (v > 0)
             return;
 
-        sampler.StartNote(39, Mathf.Min(1, -v / 0.05f));
+        sampler.StartNote(note, Mathf.Min(1, -v / 0.05f));
 
     }
 
     void OnCollisionExit(Collision collision)
     {
-        sampler.EndNote(39);
+        sampler.EndNote(note);
     }
 }
