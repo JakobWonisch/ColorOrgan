@@ -41,8 +41,6 @@ public class Key : MonoBehaviour
     {
         bool isLeft = collision.gameObject.name.Equals("Controller (left)");
 
-        Debug.Log(isLeft ? deltaLeft.y : deltaRight.y);
-
         float v = isLeft ? deltaLeft.y : deltaRight.y;
 
         if (v > 0)

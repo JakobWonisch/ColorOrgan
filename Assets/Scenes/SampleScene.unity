@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &425372937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +437,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &842668769
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854400, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854401, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: m_Name
+      value: Keyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633787014135854403, guid: 00169159552fce24893ed7e658b5ea0c,
+        type: 3}
+      propertyPath: finish
+      value: C5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00169159552fce24893ed7e658b5ea0c, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,11 +742,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LanternLauncher
       objectReference: {fileID: 0}
+    - target: {fileID: 7229238301970971890, guid: 8cc1f857c701224458d63e9a4767061b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7229238301970971891, guid: 8cc1f857c701224458d63e9a4767061b,
         type: 3}
       propertyPath: spawn
       value: 
       objectReference: {fileID: 963194230}
+    - target: {fileID: 7229238301970971891, guid: 8cc1f857c701224458d63e9a4767061b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 963194228}
     - target: {fileID: 7229238301970971892, guid: 8cc1f857c701224458d63e9a4767061b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -820,6 +904,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MidiPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142567776324991497, guid: 28000424076027f478debea54919937a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8142567776324991499, guid: 28000424076027f478debea54919937a,
         type: 3}
