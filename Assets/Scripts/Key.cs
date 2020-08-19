@@ -19,11 +19,14 @@ public class Key : MonoBehaviour
     private Material materialBase;
     private MeshRenderer meshRenderer;
 
+    private Light pointLight;
+
     private Coroutine fadeOut;
 
     // Start is called before the first frame update
     void Start()
     {
+
         sampler = GameObject.Find("Piano").GetComponent<Sampler>();
         controllerLeft = GameObject.Find("Controller (left)").transform;
         controllerRight = GameObject.Find("Controller (right)").transform;
@@ -34,6 +37,9 @@ public class Key : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
         materialBase = new Material(meshRenderer.material);
 
+        pointLight = GetComponentInChildren<Light>();
+        pointLight.color = materialShine.color;
+        pointLight.intensity = 0;
     }
 
     // Update is called once per frame
@@ -100,6 +106,7 @@ public class Key : MonoBehaviour
             v -= 0.01f;
 
             meshRenderer.material.Lerp(materialBase, materialShine, v);
+            pointLight.intensity = v;
 
             yield return new WaitForSeconds(0.01f);
         }
