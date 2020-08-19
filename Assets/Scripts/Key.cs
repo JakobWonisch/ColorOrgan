@@ -23,6 +23,8 @@ public class Key : MonoBehaviour
 
     private Coroutine fadeOut;
 
+    private float simForce = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -89,6 +91,14 @@ public class Key : MonoBehaviour
             return;
 
         sampler.EndNote(note);
+    }
+
+    public void SimulateNote(float v)
+    {
+        // used by midi player to simulate notes
+        GetComponent<Rigidbody>().AddForce(0, simForce * -v, 0, ForceMode.Impulse);
+
+        StartShine(v);
     }
 
     private void StartShine(float v)

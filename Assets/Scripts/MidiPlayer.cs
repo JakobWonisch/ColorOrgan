@@ -13,10 +13,13 @@ public class MidiPlayer : MonoBehaviour
     public string filename;
 
     public Sampler sampler;
+    public KeyboardSpawner keyboard;
 
     private List<NoteInfo> notes;
     private int onIndex = 0;
     private float startTime;
+
+    private Key[] keys;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +89,12 @@ public class MidiPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // init keys
+        if(keys == null || keys.Length != keyboard.transform.childCount)
+        {
+            keys = keyboard.GetComponentsInChildren<Key>();
+        }
+
         if (onIndex >= notes.Count)
             return;
 
@@ -107,6 +116,16 @@ public class MidiPlayer : MonoBehaviour
         // Debug.Log("Playing note: " + n + " for " + s + "seconds");
 
         sampler.StartNote(n, v);
+
+        // search for key
+        foreach(Key k in keys)
+        {
+            if (k.note != n)
+                continue;
+
+            k.SimulateNote(v);
+            break;
+        }
 
         yield return new WaitForSeconds(s);
 
