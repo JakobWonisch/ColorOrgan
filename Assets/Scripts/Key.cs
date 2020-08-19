@@ -88,7 +88,7 @@ public class Key : MonoBehaviour
     void OnCollisionExit(Collision collision)
     {
 
-        if (!collision.gameObject.name.Equals("Controller (left)") || !collision.gameObject.name.Equals("Controller (right)"))
+        if (!collision.gameObject.name.Equals("Controller (left)") && !collision.gameObject.name.Equals("Controller (right)"))
             return;
 
         sampler.EndNote(note);
