@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
@@ -115,10 +116,22 @@ public class Key : MonoBehaviour
         {
             v -= 0.01f;
 
-            meshRenderer.material.Lerp(materialBase, materialShine, v);
-            pointLight.intensity = v;
+            float lerp = v;
+
+            if (IsBlackKey())
+                lerp = 1 - Mathf.Pow(1 - lerp, 4);
+
+            meshRenderer.material.Lerp(materialBase, materialShine, lerp);
+            pointLight.intensity = lerp;
 
             yield return new WaitForSeconds(0.01f);
         }
+    }
+
+    private bool IsBlackKey()
+    {
+        int m = note % 12;
+
+        return (m < 4 && m % 2 == 1) || (m > 4 && m % 2 == 0);
     }
 }

@@ -31,6 +31,8 @@ public class KeyboardSpawner : MonoBehaviour
 
     private Vector3[] offsets;
 
+    private Key[] keyObjects;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +61,9 @@ public class KeyboardSpawner : MonoBehaviour
             key.materialShine = materials[(startN + i) % materials.Length];
 
         }
+
+        keyObjects = GetComponentsInChildren<Key>();
+        
     }
 
     void Update()
@@ -87,6 +92,19 @@ public class KeyboardSpawner : MonoBehaviour
         }
     }
 
+    public void SimulateNote(int n, float v)
+    {
+        // search for key
+        foreach (Key k in keyObjects)
+        {
+            if (k.note != n)
+                continue;
+
+            k.SimulateNote(v);
+            break;
+        }
+    }
+
     private int GetKey(int n)
     {
         int m = n % 12;
@@ -97,6 +115,11 @@ public class KeyboardSpawner : MonoBehaviour
             return m - 5;
         else
             return m - 7;
+    }
+
+    public int GetStart()
+    {
+        return startN;
     }
 
 }

@@ -886,6 +886,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3729258814204676991
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3729258813941888137, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: sampler
+      value: 
+      objectReference: {fileID: 998269676}
+    - target: {fileID: 3729258813941888137, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: keyboard
+      value: 
+      objectReference: {fileID: 854975018}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888138, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729258813941888139, guid: cd0d77f69974ca9439a2375f8d109e85,
+        type: 3}
+      propertyPath: m_Name
+      value: ControllerKeyboard
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd0d77f69974ca9439a2375f8d109e85, type: 3}
 --- !u!1001 &7229238301498986736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1074,7 +1153,7 @@ PrefabInstance:
     - target: {fileID: 8142567776324991497, guid: 28000424076027f478debea54919937a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8142567776324991499, guid: 28000424076027f478debea54919937a,
         type: 3}
