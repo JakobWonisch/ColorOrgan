@@ -9,6 +9,8 @@ public class KeyboardSpawner : MonoBehaviour
     public GameObject[] keys;
     public string start, finish;
 
+    public Material[] materials;
+
     private int startN, finishN;
 
     private Vector3[] offsetsFromOrigin = {
@@ -50,13 +52,11 @@ public class KeyboardSpawner : MonoBehaviour
             int k = GetKey(startN + i);
 
             position += offsets[(startN + i) % 12];
-
-            Debug.Log(k + ", " + offsets[(startN + i) % 12]);
-            
             GameObject go = Instantiate(keys[k], transform.position + position, Quaternion.identity, transform);
             Key key = go.GetComponentInChildren<Key>();
             
             key.note = startN + i;
+            key.materialShine = materials[(startN + i) % materials.Length];
 
         }
     }

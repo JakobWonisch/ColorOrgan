@@ -9,9 +9,17 @@ public class Key : MonoBehaviour
     [HideInInspector]
     public int note = 36;
 
+    [HideInInspector]
+    public Material materialShine;
+
     private Sampler sampler;
     private Transform controllerLeft, controllerRight;
     private Vector3 lastLeft, lastRight, deltaLeft, deltaRight;
+
+    private Material materialBase;
+    private MeshRenderer meshRenderer;
+
+    private Coroutine fadeOut;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +28,12 @@ public class Key : MonoBehaviour
         controllerLeft = GameObject.Find("Controller (left)").transform;
         controllerRight = GameObject.Find("Controller (right)").transform;
 
-        Debug.Log("Sampler: " + sampler);
-
         lastLeft = controllerLeft.position;
         lastRight = controllerRight.position;
+
+        meshRenderer = GetComponent<MeshRenderer>();
+        materialBase = new Material(meshRenderer.material);
+
     }
 
     // Update is called once per frame
@@ -34,6 +44,13 @@ public class Key : MonoBehaviour
 
         deltaRight = controllerRight.position - lastRight;
         lastRight = controllerRight.position;
+       
+
+        /*float duration = 2;
+        float lerp = Mathf.PingPong(Time.time, duration) / duration;
+        Debug.Log(lerp);
+        meshRenderer.material.Lerp(materialBase, materialShine, lerp);
+        */
 
     }
 
@@ -41,17 +58,50 @@ public class Key : MonoBehaviour
     {
         bool isLeft = collision.gameObject.name.Equals("Controller (left)");
 
+        if (!isLeft && !collision.gameObject.name.Equals("Controller (right)"))
+            return;
+
         float v = isLeft ? deltaLeft.y : deltaRight.y;
 
         if (v > 0)
             return;
 
-        sampler.StartNote(note, Mathf.Min(1, -v / 0.05f));
+        if (v == 0)
+            v = -0.05f; // have a min velocity
 
+        float vel = Mathf.Min(1, -v / 0.05f);
+
+        sampler.StartNote(note, vel);
+
+        StartShine(vel);
     }
 
     void OnCollisionExit(Collision collision)
     {
+
+        if (!collision.gameObject.name.Equals("Controller (left)") || !collision.gameObject.name.Equals("Controller (right)"))
+            return;
+
         sampler.EndNote(note);
+    }
+
+    private void StartShine(float v)
+    {
+        if (fadeOut != null)
+            StopCoroutine(fadeOut);
+
+        fadeOut = StartCoroutine(FadeOut(v));
+    }
+
+    private IEnumerator FadeOut(float v)
+    {
+        while(v > 0)
+        {
+            v -= 0.01f;
+
+            meshRenderer.material.Lerp(materialBase, materialShine, v);
+
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }
