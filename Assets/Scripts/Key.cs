@@ -30,7 +30,7 @@ public class Key : MonoBehaviour
     void Start()
     {
 
-        sampler = GameObject.Find("Piano").GetComponent<Sampler>();
+        sampler = GameObject.Find("Sampler").GetComponent<Sampler>();
         controllerLeft = GameObject.Find("Controller (left)").transform;
         controllerRight = GameObject.Find("Controller (right)").transform;
 

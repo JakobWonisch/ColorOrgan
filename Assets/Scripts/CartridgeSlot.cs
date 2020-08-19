@@ -30,9 +30,14 @@ public class CartridgeSlot : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        Cartridge next = other.transform.parent.GetComponent<Cartridge>();
+        Transform otherParent = other.transform.parent;
 
-        if (next == null || !next.IsHeld())
+        if (otherParent == null)
+            return;
+
+        Cartridge next = otherParent.GetComponent<Cartridge>();
+
+        if (next == null || !next.IsHeld() || current == next)
             return;
         
         if(current != null)
@@ -47,6 +52,7 @@ public class CartridgeSlot : MonoBehaviour
         current.GetComponent<Rigidbody>().isKinematic = true;
 
         sampler.SetInstrument(current.sampleName, current.prefix);
+        Debug.Log("Set instrument to " + current.sampleName);
     }
 
 }

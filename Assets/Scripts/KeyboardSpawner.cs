@@ -14,7 +14,7 @@ public class KeyboardSpawner : MonoBehaviour
     private int startN, finishN;
 
     private Vector3[] offsetsFromOrigin = {
-        new Vector3(0,0,0),
+       /* new Vector3(0,0,0),
         new Vector3(0.358f, 0.209f, 0.8509998f),
         new Vector3(0.723f, 0.143f, -0.9089999f),
         new Vector3(1.067f, 0.204f, 0.8369999f),
@@ -26,7 +26,20 @@ public class KeyboardSpawner : MonoBehaviour
         new Vector3(3.249f, 0.148f, -0.921001f),
         new Vector3(3.593f, 0.209f, 0.8249998f),
         new Vector3(3.833f, 0.146f, -0.7710013f),
-        new Vector3(4.334f, -0.00999999f, -0.00300014f),
+        new Vector3(4.334f, -0.00999999f, -0.00300014f),*/
+       new Vector3(0f, 0f, 0f),
+        new Vector3(0.358f, 0.209f, 0.8509998f),
+        new Vector3(0.723f, 0.143f, -0.909f),
+        new Vector3(1.067f, 0.204f, 0.8369998f),
+        new Vector3(1.307f, 0.141f, -0.7590004f),
+        new Vector3(1.817f, 0.008999944f, 0.001999795f),
+        new Vector3(2.175f, 0.209f, 0.8529996f),
+        new Vector3(2.54f, 0.173f, -0.9070011f),
+        new Vector3(2.884f, 0.204f, 0.8389996f),
+        new Vector3(3.249f, 0.148f, -0.9210011f),
+        new Vector3(3.593f, 0.209f, 0.8249997f),
+        new Vector3(3.833f, 0.146f, -0.7710015f),
+        new Vector3(4.334f, -0.00999999f, -0.003000259f),
     };
 
     private Vector3[] offsets;
