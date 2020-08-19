@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
@@ -57,6 +58,26 @@ public class Sampler : MonoBehaviour
 
         playingNotes = new List<NoteDestroy>();
 
+        LoadSamples();
+
+        semiFactor = (float)Math.Pow(2, 1 / 12f);
+    }
+
+    public void SetInstrument(string s)
+    {
+        prefix = true;
+    }
+
+    public void SetInstrument(string s, bool p)
+    {
+        sampleName = s;
+        prefix = p;
+        LoadSamples();
+    }
+
+    private void LoadSamples()
+    {
+
         notes = new List<Note>();
 
         // load all available notes
@@ -74,8 +95,6 @@ public class Sampler : MonoBehaviour
             notes.Add(new Note(i, temp));
         }
 
-
-        semiFactor = (float)Math.Pow(2, 1 / 12f);
     }
 
     private string GetSampleName(int n)
