@@ -10,7 +10,7 @@ public class Cartridge : MonoBehaviour
 
     private float ejectionForce = 2;
 
-    public bool isHeld = true; // true if held by player
+    private bool isHeld = false; // true if held by player
 
     public void Eject(Transform awayFrom)
     {
@@ -33,5 +33,15 @@ public class Cartridge : MonoBehaviour
     public bool IsHeld()
     {
         return isHeld;
+    }
+
+    public void Hold()
+    {
+        isHeld = true;
+    }
+
+    public void Drop()
+    {
+        isHeld = false;
     }
 }

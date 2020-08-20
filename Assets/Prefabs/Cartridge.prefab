@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1195831881557410127}
   - component: {fileID: 1195831881557410120}
   - component: {fileID: 1195831881557410126}
-  m_Layer: 0
+  - component: {fileID: 4667364931829926759}
+  m_Layer: 13
   m_Name: Cartridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sampleName: guitar
   prefix: 1
+  isHeld: 1
 --- !u!54 &1195831881557410126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -63,6 +65,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4667364931829926759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195831881557410121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c935c9a6c4347224ebc7933e15857701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focused: {fileID: 2100000, guid: 09acf709b54721f4aab25a9a1d1a78dc, type: 2}
 --- !u!1 &1195831881878075940
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +90,7 @@ GameObject:
   - component: {fileID: 1195831881878075944}
   - component: {fileID: 1195831881878075945}
   - component: {fileID: 1195831881878075946}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

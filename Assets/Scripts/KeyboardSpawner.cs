@@ -61,12 +61,12 @@ public class KeyboardSpawner : MonoBehaviour
         startN = Sampler.NoteToNumber(start);
         finishN = Sampler.NoteToNumber(finish);
 
-        Vector3 position = -offsets[startN % 12];
+        Vector3 position = -Vector3.Scale(offsets[startN % 12], transform.localScale);
         for (int i = 0; i <= finishN - startN; i++)
         {
             int k = GetKey(startN + i);
 
-            position += offsets[(startN + i) % 12];
+            position += Vector3.Scale(offsets[(startN + i) % 12], transform.localScale);
             GameObject go = Instantiate(keys[k], transform.position + position, Quaternion.identity, transform);
             Key key = go.GetComponentInChildren<Key>();
             

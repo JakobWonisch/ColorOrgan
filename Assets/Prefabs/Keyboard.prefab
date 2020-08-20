@@ -49,5 +49,18 @@ MonoBehaviour:
   - {fileID: 9058981748386525123, guid: cdb0e8be88eae0c4a9a3670cef44414a, type: 3}
   - {fileID: 9058981748386525123, guid: bd45518802f81a04e84d58f5e3f03069, type: 3}
   - {fileID: 9058981748386525123, guid: fb712053e8419714ea2aed396564eac7, type: 3}
-  start: C3
-  finish: C4
+  start: C2
+  finish: C7
+  materials:
+  - {fileID: 2100000, guid: a48235196326bbc428a530536e717f5a, type: 2}
+  - {fileID: 2100000, guid: 8995f5072a060dc4e895cca2024faa24, type: 2}
+  - {fileID: 2100000, guid: 9693b9d5cf6b5464a9dddbd344b02025, type: 2}
+  - {fileID: 2100000, guid: 90d582cad9552aa4081852359dccc001, type: 2}
+  - {fileID: 2100000, guid: 777e5f9f7930a054680d45f42364e895, type: 2}
+  - {fileID: 2100000, guid: e12f686b13c01534992e2af0616ea2f0, type: 2}
+  - {fileID: 2100000, guid: 440ac65279230f94a9059a5b7deeca00, type: 2}
+  - {fileID: 2100000, guid: a9848845ee667904db277936148a7299, type: 2}
+  - {fileID: 2100000, guid: 7ba26d7abb7aae9438add075e13d32fc, type: 2}
+  - {fileID: 2100000, guid: 6671899d57b7f404b92e111a5981611e, type: 2}
+  - {fileID: 2100000, guid: 55cc8b5980f14fe499eb386721f4d2ee, type: 2}
+  - {fileID: 2100000, guid: 00829514bfacbfd4b80337a94af43d65, type: 2}
