@@ -20,6 +20,9 @@ public class InputHandler : MonoBehaviour
 
     private Quaternion startingRot;
 
+    private Vector3 lastLocation, delta;
+    private bool wasGrabbing = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +33,10 @@ public class InputHandler : MonoBehaviour
     void Update()
     {
 
-
         if (GetGrabDown())
         {
             grabbing = true;
+            wasGrabbing = true;
             Debug.Log("Grab down " + handType);
 
             if(currentObject != null)
@@ -88,6 +91,25 @@ public class InputHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (currentObject != null && wasGrabbing)
+        {
+            Rigidbody rb = currentObject.GetComponent<Rigidbody>();
+
+            Debug.Log("Throwing " + (delta / Time.deltaTime));
+            Debug.Log("Test " + (currentObject.transform.position - lastLocation));
+            Debug.Log("time " + Time.deltaTime);
+
+            if (rb == null)
+            {
+                Vector3 vel = delta / Time.deltaTime;
+
+                // vel = currentObject.transform.InverseTransformVector(vel);
+                vel = currentObject.transform.rotation * vel;
+                rb.velocity = vel;
+                // rb.AddForce(vel * rb.mass, ForceMode.Impulse);
+            }
+        }
+
         if (!grabbing)
             DetectHits();
     }
@@ -136,11 +158,33 @@ public class InputHandler : MonoBehaviour
 
     void LateUpdate()
     {
-        if(currentObject != null && grabbing)
+        if(currentObject != null)
         {
-            currentObject.transform.position = holdingPoint.position;
-            currentObject.transform.rotation = transform.rotation * startingRot;
+            if (grabbing)
+            {
+                /*Rigidbody rb = currentObject.GetComponent<Rigidbody>();
+
+                if (rb == null)
+                {*/
+                currentObject.transform.position = holdingPoint.position;
+                currentObject.transform.rotation = transform.rotation * startingRot;
+    
+                if(lastLocation != null)
+                    delta = currentObject.transform.position - lastLocation;
+                
+                lastLocation = currentObject.transform.position;
+                Debug.Log("Location " + lastLocation);
+                /*}
+                else
+                {
+                    rb.position = holdingPoint.position;
+                    rb.rotation = transform.rotation * startingRot;
+
+                }*/
+            }
         }
+
+
     }
 
     private bool GetGrabDown()
