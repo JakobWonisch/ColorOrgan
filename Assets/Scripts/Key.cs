@@ -24,7 +24,7 @@ public class Key : MonoBehaviour
 
     private Coroutine fadeOut;
 
-    private float simForce = 3;
+    private float simForce = 10;
 
     // Start is called before the first frame update
     void Start()
