@@ -9,6 +9,7 @@ public class InputHandler : MonoBehaviour
     public SteamVR_Input_Sources handType;
     public SteamVR_Action_Boolean grabAction;
     public SteamVR_Action_Boolean gripAction;
+    public SteamVR_Action_Vibration vibrationAction;
 
     public GameObject line;
 
@@ -26,7 +27,7 @@ public class InputHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class InputHandler : MonoBehaviour
             wasGrabbing = true;
             Debug.Log("Grab down " + handType);
 
-            if(currentObject != null)
+            if (currentObject != null)
             {
                 startingRot = Quaternion.Inverse(transform.rotation) * currentObject.transform.rotation;
 
@@ -50,7 +51,7 @@ public class InputHandler : MonoBehaviour
 
                 Cartridge cartridge = currentObject.GetComponent<Cartridge>();
 
-                if(cartridge != null)
+                if (cartridge != null)
                 {
                     cartridge.Hold();
                 }
@@ -113,8 +114,9 @@ public class InputHandler : MonoBehaviour
         if (!grabbing)
             DetectHits();
     }
-    
-    private void DetectHits() {
+
+    private void DetectHits()
+    {
         int layerMask = 1 << 13;
 
         RaycastHit hit;
@@ -124,11 +126,11 @@ public class InputHandler : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             // Debug.Log("Did Hit" + hit.transform.gameObject.name);
 
-            if(currentObject != null && currentObject != hit.transform.gameObject)
+            if (currentObject != null && currentObject != hit.transform.gameObject)
             {
                 InFocus temp = currentObject.GetComponent<InFocus>();
 
-                if (temp  != null)
+                if (temp != null)
                     temp.Defocus();
             }
 
@@ -142,7 +144,7 @@ public class InputHandler : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             // Debug.Log("Did not Hit");
-            
+
             if (currentObject != null)
             {
                 InFocus temp = currentObject.GetComponent<InFocus>();
@@ -158,7 +160,7 @@ public class InputHandler : MonoBehaviour
 
     void LateUpdate()
     {
-        if(currentObject != null)
+        if (currentObject != null)
         {
             if (grabbing)
             {
@@ -168,10 +170,10 @@ public class InputHandler : MonoBehaviour
                 {*/
                 currentObject.transform.position = holdingPoint.position;
                 currentObject.transform.rotation = transform.rotation * startingRot;
-    
-                if(lastLocation != null)
+
+                if (lastLocation != null)
                     delta = currentObject.transform.position - lastLocation;
-                
+
                 lastLocation = currentObject.transform.position;
                 Debug.Log("Location " + lastLocation);
                 /*}
@@ -185,6 +187,18 @@ public class InputHandler : MonoBehaviour
         }
 
 
+    }
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision enter" + collision.gameObject.name);
+        vibrationAction.Execute(0, 0.05f, 100, 0.2f, handType);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        
     }
 
     private bool GetGrabDown()

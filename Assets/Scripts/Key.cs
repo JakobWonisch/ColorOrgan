@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
+using Valve.VR;
 
 public class Key : MonoBehaviour
 {
@@ -126,6 +127,11 @@ public class Key : MonoBehaviour
 
             yield return new WaitForSeconds(0.01f);
         }
+    }
+
+    private void StartVibration(int note, float velocity)
+    {
+
     }
 
     private bool IsBlackKey()
