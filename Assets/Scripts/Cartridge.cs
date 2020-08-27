@@ -10,7 +10,7 @@ public class Cartridge : MonoBehaviour
 
     private float ejectionForce = 2;
 
-    private bool isHeld = false; // true if held by player
+    public bool isHeld = false; // true if held by player
 
     public void Eject(Transform awayFrom)
     {
@@ -28,6 +28,14 @@ public class Cartridge : MonoBehaviour
         delta.y *= -1;
 
         rb.AddForce(delta.normalized * ejectionForce, ForceMode.Impulse);
+    }
+
+    public void Eject()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+
+        rb.AddRelativeForce(Vector3.up * ejectionForce, ForceMode.Impulse);
+
     }
 
     public bool IsHeld()

@@ -15,6 +15,8 @@ public class InputHandler : MonoBehaviour
 
     public Transform holdingPoint;
 
+    public CartridgeSlot slot;
+
     private GameObject currentObject;
 
     private bool grabbing = false;
@@ -53,6 +55,11 @@ public class InputHandler : MonoBehaviour
 
                 if (cartridge != null)
                 {
+                    if(slot.current == cartridge)
+                    {
+                        slot.UnsetCurrent();
+                    }
+
                     cartridge.Hold();
                 }
             }

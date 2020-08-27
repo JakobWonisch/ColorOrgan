@@ -1013,12 +1013,12 @@ PrefabInstance:
     - target: {fileID: 1195831881557410127, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.39999998
+      value: -3.42
       objectReference: {fileID: 0}
     - target: {fileID: 1195831881557410127, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.353
+      value: 1.72
       objectReference: {fileID: 0}
     - target: {fileID: 1195831881557410127, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
         type: 3}
@@ -1074,21 +1074,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 30833037141391567, guid: 96f487899b2667643bc5c1a8ac29e92f,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 30833037141391567, guid: 96f487899b2667643bc5c1a8ac29e92f,
-        type: 3}
-      propertyPath: m_Range
-      value: 1.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 30833037141391567, guid: 96f487899b2667643bc5c1a8ac29e92f,
-        type: 3}
-      propertyPath: m_Shadows.m_Type
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1811787646639546190, guid: 96f487899b2667643bc5c1a8ac29e92f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1154,16 +1139,6 @@ PrefabInstance:
       propertyPath: sampler
       value: 
       objectReference: {fileID: 998269676}
-    - target: {fileID: 5279439239743744124, guid: 96f487899b2667643bc5c1a8ac29e92f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5279439239743744124, guid: 96f487899b2667643bc5c1a8ac29e92f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5608081572579960252, guid: 96f487899b2667643bc5c1a8ac29e92f,
         type: 3}
       propertyPath: m_IsActive
