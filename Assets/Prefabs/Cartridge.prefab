@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 8754362682096907345}
   - component: {fileID: 3449875108634634486}
   - component: {fileID: 413146811773343436}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 8397239897519175385}
   - component: {fileID: 8545068412996371054}
   - component: {fileID: 1863746360239804012}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 5698665768759129731}
   - component: {fileID: 8887317002698867897}
   - component: {fileID: 8827665245562073080}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,6 +525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cartridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9fdab090e0178cc4bb51e09b43cc5196,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fdab090e0178cc4bb51e09b43cc5196, type: 3}
