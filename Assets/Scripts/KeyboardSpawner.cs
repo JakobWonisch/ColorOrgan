@@ -27,7 +27,7 @@ public class KeyboardSpawner : MonoBehaviour
         new Vector3(3.593f, 0.209f, 0.8249998f),
         new Vector3(3.833f, 0.146f, -0.7710013f),
         new Vector3(4.334f, -0.00999999f, -0.00300014f),*/
-       new Vector3(0f, 0f, 0f),
+       /* new Vector3(0f, 0f, 0f),
         new Vector3(0.358f, 0.209f, 0.8509998f),
         new Vector3(0.723f, 0.143f, -0.909f),
         new Vector3(1.067f, 0.204f, 0.8369998f),
@@ -40,6 +40,34 @@ public class KeyboardSpawner : MonoBehaviour
         new Vector3(3.593f, 0.209f, 0.8249997f),
         new Vector3(3.833f, 0.146f, -0.7710015f),
         new Vector3(4.334f, -0.00999999f, -0.003000259f),
+       */
+/* new Vector3(0f, 0f, 0f),
+new Vector3(0.2825161f, 0.188321f, 1.097639f),
+new Vector3(0.33621f, -0.1858977f, -1.103759f),
+new Vector3(0.3378845f, 0.1858977f, 1.103759f),
+new Vector3(0.3037198f, -0.1850024f, -1.090852f),
+new Vector3(0.4156077f, -0.003817765f, 0.2421778f),
+new Vector3(0.3569183f, 0.2372147f, 0.859413f),
+new Vector3(0.3243887f, -0.2293555f, -1.059022f),
+new Vector3(0.3059609f, 0.180961f, 1.048284f),
+new Vector3(0.3178723f, -0.184913f, -1.232265f),
+new Vector3(0.3078611f, 0.2333075f, 1.243004f),
+new Vector3(0.3031805f, -0.2333969f, -1.101591f),
+new Vector3(0.4930413f, -0.00331858f, -0.006786883f), */
+new Vector3(0f, 0f, 0f),
+new Vector3(0.2825161f, 0.188321f, 1.097639f),
+new Vector3(0.6187261f, 0.002423358f, -0.006119356f),
+new Vector3(0.9566106f, 0.188321f, 1.097639f),
+new Vector3(1.26033f, 0.00331858f, 0.006786883f),
+new Vector3(1.675938f, -0.0004991849f, 0.2489647f),
+new Vector3(2.032856f, 0.2367155f, 1.108378f),
+new Vector3(2.357245f, 0.007359985f, 0.04935555f),
+new Vector3(2.663206f, 0.188321f, 1.097639f),
+new Vector3(2.981078f, 0.003407984f, -0.134626f),
+new Vector3(3.288939f, 0.2367155f, 1.108378f),
+new Vector3(3.59212f, 0.00331858f, 0.006786883f),
+new Vector3(4.085161f, 0f, 0f),
+
     };
 
     private Vector3[] offsets;
@@ -61,13 +89,14 @@ public class KeyboardSpawner : MonoBehaviour
         startN = Sampler.NoteToNumber(start);
         finishN = Sampler.NoteToNumber(finish);
 
-        Vector3 position = -Vector3.Scale(offsets[startN % 12], transform.localScale);
+        Vector3 position = Vector3.zero; //  -Vector3.Scale(offsets[startN % 12], transform.localScale);
         for (int i = 0; i <= finishN - startN; i++)
         {
             int k = GetKey(startN + i);
 
-            position += Vector3.Scale(offsets[(startN + i) % 12], transform.localScale);
-            GameObject go = Instantiate(keys[k], transform.position + position, Quaternion.identity, transform);
+            // position += Vector3.Scale(offsets[(startN + i) % 12], transform.localScale);
+            position += offsets[(startN + i) % 12] / 0.35101f;
+            GameObject go = Instantiate(keys[k], position, Quaternion.identity, transform);
             Key key = go.GetComponentInChildren<Key>();
             
             key.note = startN + i;
@@ -120,6 +149,9 @@ public class KeyboardSpawner : MonoBehaviour
 
     private int GetKey(int n)
     {
+
+        return n % 12;
+        /*
         int m = n % 12;
 
         if (m < 5)
@@ -127,7 +159,7 @@ public class KeyboardSpawner : MonoBehaviour
         else if (m < 9)
             return m - 5;
         else
-            return m - 7;
+            return m - 7; */
     }
 
     public int GetStart()
