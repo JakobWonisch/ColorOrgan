@@ -6,14 +6,21 @@ public class CartridgeSlot : MonoBehaviour
 {
     public Sampler sampler;
 
-    private Cartridge current;
+    public Light onLight;
+    public MeshRenderer mrLight;
+    public Material lightOn, lightOff;
+
+    public Transform holdingPoint;
+
+    [HideInInspector]
+    public Cartridge current;
 
     private float snapSpeed = 0.01f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetLightOff();
     }
 
     // Update is called once per frame
@@ -22,8 +29,8 @@ public class CartridgeSlot : MonoBehaviour
         if (current != null)
         {
             // animate cartridge to holding position
-            current.transform.rotation = Quaternion.Slerp(current.transform.rotation, transform.rotation, snapSpeed);
-            current.transform.position = Vector3.Lerp(current.transform.position, transform.position, snapSpeed);
+            current.transform.rotation = Quaternion.Slerp(current.transform.rotation, holdingPoint.rotation, snapSpeed);
+            current.transform.position = Vector3.Lerp(current.transform.position, holdingPoint.position, snapSpeed);
         }
     }
 
@@ -39,8 +46,8 @@ public class CartridgeSlot : MonoBehaviour
 
         if (next == null || !next.IsHeld() || current == next)
             return;
-        
-        if(current != null)
+
+        if (current != null)
         {
             // eject
             current.GetComponent<Rigidbody>().isKinematic = false;
@@ -50,9 +57,46 @@ public class CartridgeSlot : MonoBehaviour
         // move new to current
         current = next;
         current.GetComponent<Rigidbody>().isKinematic = true;
+        SetLightOn();
 
         sampler.SetInstrument(current.sampleName, current.prefix);
         Debug.Log("Set instrument to " + current.sampleName);
+    }
+
+    public void UnsetCurrent()
+    {
+        if (current != null)
+        {
+            current.GetComponent<Rigidbody>().isKinematic = false;
+            current = null;
+            SetLightOff();
+        }
+    }
+
+    public void EjectCurrent()
+    {
+
+        if (current != null)
+        {
+            // eject
+            current.GetComponent<Rigidbody>().isKinematic = false;
+            current.Eject();
+            current = null;
+            SetLightOff();
+        }
+
+    }
+
+    private void SetLightOn()
+    {
+        mrLight.material = lightOn;
+        onLight.enabled = true;
+    }
+
+    private void SetLightOff()
+    {
+        mrLight.material = lightOff;
+        onLight.enabled = false;
     }
 
 }
