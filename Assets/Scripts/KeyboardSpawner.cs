@@ -95,8 +95,14 @@ new Vector3(4.085161f, 0f, 0f),
             int k = GetKey(startN + i);
 
             // position += Vector3.Scale(offsets[(startN + i) % 12], transform.localScale);
-            position += offsets[(startN + i) % 12] / 0.35101f;
-            GameObject go = Instantiate(keys[k], position, Quaternion.identity, transform);
+            position += offsets[(startN + i) % 12];
+            // GameObject go = Instantiate(keys[k], position, Quaternion.identity, transform);
+            // GameObject go = Instantiate(keys[k], position, Quaternion.Euler(0,180,0), transform);
+            GameObject go = Instantiate(keys[k], transform);
+            
+            go.transform.localPosition = position;
+            go.transform.localRotation = Quaternion.Euler(0, 180, 0);
+
             Key key = go.GetComponentInChildren<Key>();
             
             key.note = startN + i;
