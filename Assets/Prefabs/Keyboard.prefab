@@ -57,7 +57,7 @@ MonoBehaviour:
   - {fileID: 9058981748386525123, guid: 380afb4dace36fb4b96e229e8e321311, type: 3}
   - {fileID: 9058981748386525123, guid: cbccfeadfe3809641ab622523b8383f8, type: 3}
   start: C2
-  finish: C7
+  finish: C4
   materials:
   - {fileID: 2100000, guid: a48235196326bbc428a530536e717f5a, type: 2}
   - {fileID: 2100000, guid: 8995f5072a060dc4e895cca2024faa24, type: 2}

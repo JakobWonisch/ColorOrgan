@@ -32,8 +32,11 @@ public class LanternLauncher : MonoBehaviour
         // pick random point in spawn
         Vector3 rand = spawn.size;
         rand.Scale(new Vector3(Random.Range(0f, 1f) -0.5f, Random.Range(0f, 1f) - 0.5f, Random.Range(0f, 1f) - 0.5f));
-        rand += spawn.center + mainCamera.position;
-        
+        // rand += spawn.center + mainCamera.position;
+        rand += spawn.center;
+
+        rand = mainCamera.TransformPoint(rand);
+
         GameObject go = Instantiate(lanternPrefab, rand, Quaternion.identity, transform);
         // go.transform.GetChild(0).GetComponent<MeshRenderer>().material = materials[n % materials.Length];
         MeshRenderer[] mrs = go.GetComponentsInChildren<MeshRenderer>();
