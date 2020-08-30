@@ -24,6 +24,7 @@ public class RepositioningListener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Reposition();
     }
 
     // Update is called once per frame
@@ -37,16 +38,7 @@ public class RepositioningListener : MonoBehaviour
             if (hasClicked)
             {
                 // reposition
-                Debug.Log("Repositioning");
-
-                sustainSwitch.position = sustainTarget.position;
-                sustainSwitch.rotation = sustainTarget.rotation;
-
-                cartridgeSlot.position = slotTarget.position;
-                cartridgeSlot.rotation = slotTarget.rotation;
-
-                keyboard.position = keyboardTarget.position;
-                keyboard.rotation = keyboardTarget.rotation;
+                Reposition();
 
                 vibrationAction.Execute(0, 0.05f, 100, 0.2f, SteamVR_Input_Sources.Any);
 
@@ -58,5 +50,20 @@ public class RepositioningListener : MonoBehaviour
                 hasClicked = true;
             }
         }
+    }
+
+    private void Reposition()
+    {
+        Debug.Log("Repositioning");
+
+        sustainSwitch.position = sustainTarget.position;
+        sustainSwitch.rotation = sustainTarget.rotation;
+
+        cartridgeSlot.position = slotTarget.position;
+        cartridgeSlot.rotation = slotTarget.rotation;
+
+        keyboard.position = keyboardTarget.position;
+        keyboard.rotation = keyboardTarget.rotation;
+
     }
 }
