@@ -133,6 +133,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 842668769}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &321134029 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8142567776324991496, guid: 28000424076027f478debea54919937a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8142567775775414445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f110bb8b21ae7414a93398b91762cd23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &425372936
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +529,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1195831881557410120, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
+        type: 3}
+      propertyPath: sampleName
+      value: indiana
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195831881557410120, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
+        type: 3}
+      propertyPath: prettyName
+      value: Indiana Jones
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195831881557410120, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
+        type: 3}
+      propertyPath: midiFile
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195831881557410120, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
+        type: 3}
+      propertyPath: prefix
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1195831881557410121, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
         type: 3}
       propertyPath: m_Name
@@ -560,7 +592,7 @@ PrefabInstance:
     - target: {fileID: 1195831881557410127, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1195831881557410127, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
         type: 3}
@@ -1229,6 +1261,11 @@ PrefabInstance:
       propertyPath: sampleName
       value: piano
       objectReference: {fileID: 0}
+    - target: {fileID: 1195831881557410120, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
+        type: 3}
+      propertyPath: prettyName
+      value: Piano
+      objectReference: {fileID: 0}
     - target: {fileID: 1195831881557410121, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
         type: 3}
       propertyPath: m_Name
@@ -1326,75 +1363,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2100272687
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.34
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 9fdab090e0178cc4bb51e09b43cc5196,
-        type: 3}
-      propertyPath: m_Name
-      value: cartridge
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9fdab090e0178cc4bb51e09b43cc5196, type: 3}
 --- !u!1001 &1195831881345240163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1402,6 +1370,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1195831881557410120, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
+        type: 3}
+      propertyPath: prettyName
+      value: Guitar
+      objectReference: {fileID: 0}
     - target: {fileID: 1195831881557410121, guid: 1c4ed42efa9fd5440a314fc70ac3071a,
         type: 3}
       propertyPath: m_Name
@@ -1546,6 +1519,11 @@ PrefabInstance:
       propertyPath: sampler
       value: 
       objectReference: {fileID: 998269676}
+    - target: {fileID: 1811787646639546193, guid: 96f487899b2667643bc5c1a8ac29e92f,
+        type: 3}
+      propertyPath: midiPlayer
+      value: 
+      objectReference: {fileID: 321134029}
     - target: {fileID: 5608081572579960252, guid: 96f487899b2667643bc5c1a8ac29e92f,
         type: 3}
       propertyPath: m_IsActive
@@ -1978,7 +1956,7 @@ PrefabInstance:
     - target: {fileID: 8142567776324991497, guid: 28000424076027f478debea54919937a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8142567776324991499, guid: 28000424076027f478debea54919937a,
         type: 3}

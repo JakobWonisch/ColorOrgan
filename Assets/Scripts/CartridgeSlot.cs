@@ -5,6 +5,7 @@ using UnityEngine;
 public class CartridgeSlot : MonoBehaviour
 {
     public Sampler sampler;
+    public MidiPlayer midiPlayer;
 
     public Light onLight;
     public MeshRenderer mrLight;
@@ -51,6 +52,10 @@ public class CartridgeSlot : MonoBehaviour
         {
             // eject
             current.GetComponent<Rigidbody>().isKinematic = false;
+
+            if (current.midiFile)
+                midiPlayer.StopMidi();
+
             current.Eject(other.transform.parent);
         }
 
@@ -59,7 +64,14 @@ public class CartridgeSlot : MonoBehaviour
         current.GetComponent<Rigidbody>().isKinematic = true;
         SetLightOn();
 
-        sampler.SetInstrument(current.sampleName, current.prefix);
+        if (current.midiFile)
+        {
+            midiPlayer.PlayMidi(current.sampleName);
+        }
+        else
+        {
+            sampler.SetInstrument(current.sampleName, current.prefix);
+        }
         Debug.Log("Set instrument to " + current.sampleName);
     }
 
@@ -68,6 +80,10 @@ public class CartridgeSlot : MonoBehaviour
         if (current != null)
         {
             current.GetComponent<Rigidbody>().isKinematic = false;
+            
+            if (current.midiFile)
+                midiPlayer.StopMidi();
+
             current = null;
             SetLightOff();
         }
@@ -80,6 +96,10 @@ public class CartridgeSlot : MonoBehaviour
         {
             // eject
             current.GetComponent<Rigidbody>().isKinematic = false;
+
+            if (current.midiFile)
+                midiPlayer.StopMidi();
+
             current.Eject();
             current = null;
             SetLightOff();

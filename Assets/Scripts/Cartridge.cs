@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class Cartridge : MonoBehaviour
 {
 
-    public string sampleName;
-    public bool prefix;
+    public string sampleName, prettyName;
+    public bool prefix,
+        midiFile = false;
 
-    public Text textField;
+    public Text textInstrument, textMidi;
+    public Image imageInstrument, imageMidi;
 
     private float ejectionForce = 2;
 
@@ -17,7 +19,22 @@ public class Cartridge : MonoBehaviour
 
     void Start()
     {
-        textField.text = sampleName;
+        if (midiFile)
+        {
+            textMidi.text = prettyName;
+            imageMidi.gameObject.SetActive(true);
+            imageInstrument.gameObject.SetActive(false);
+            textMidi.gameObject.SetActive(true);
+            textInstrument.gameObject.SetActive(false);
+        }
+        else
+        {
+            textInstrument.text = prettyName;
+            imageMidi.gameObject.SetActive(false);
+            imageInstrument.gameObject.SetActive(true);
+            textMidi.gameObject.SetActive(false);
+            textInstrument.gameObject.SetActive(true);
+        }
     }
 
     public void Eject(Transform awayFrom)

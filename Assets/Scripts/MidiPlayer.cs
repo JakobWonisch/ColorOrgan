@@ -19,10 +19,19 @@ public class MidiPlayer : MonoBehaviour
     private int onIndex = 0;
     private float startTime;
 
+    private bool playing = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        MidiFile midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + filename + ".mid");
+        PlayMidi(filename);
+
+        playing = false;
+    }
+
+    public void PlayMidi(string name)
+    {
+        MidiFile midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + name + ".mid");
 
         TempoMap tempoMap = midiFile.GetTempoMap();
 
@@ -60,18 +69,21 @@ public class MidiPlayer : MonoBehaviour
         List<NoteInfo> temp = new List<NoteInfo>();
 
         foreach (NoteInfo ni in notes)
-         {
+        {
             // Debug.Log(ni.time + " " + ni.length + " " + ni.noteNumber);
             if (ni.programChange >= 9 && ni.programChange <= 16)
                 continue;
 
             temp.Add(ni);
-         }
+        }
 
         notes = temp;
 
         startTime = Time.time;
+
+        playing = true;
     }
+
     private static int? GetProgramNumber(FourBitNumber channel, long time, Dictionary<FourBitNumber, Dictionary<long, SevenBitNumber>> programChanges)
     {
         Dictionary<long, SevenBitNumber> changes;
@@ -87,6 +99,8 @@ public class MidiPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!playing)
+            return;
 
         if (onIndex >= notes.Count)
             return;
@@ -101,6 +115,11 @@ public class MidiPlayer : MonoBehaviour
             onIndex++;
 
         }
+    }
+
+    public void StopMidi()
+    {
+        playing = false;
     }
 
     IEnumerator PlayNote(int n, float s, float v)
