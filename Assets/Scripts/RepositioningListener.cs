@@ -55,15 +55,16 @@ public class RepositioningListener : MonoBehaviour
     private void Reposition()
     {
         Debug.Log("Repositioning");
+        Quaternion baseRot = Quaternion.Euler(0, sustainTarget.parent.rotation.y, 0);
 
         sustainSwitch.position = sustainTarget.position;
-        sustainSwitch.rotation = sustainTarget.rotation;
+        sustainSwitch.rotation = baseRot * sustainSwitch.localRotation;
 
         cartridgeSlot.position = slotTarget.position;
-        cartridgeSlot.rotation = slotTarget.rotation;
+        cartridgeSlot.rotation = baseRot * slotTarget.localRotation;
 
         keyboard.position = keyboardTarget.position;
-        keyboard.rotation = keyboardTarget.rotation;
+        keyboard.rotation = baseRot * keyboardTarget.localRotation;
 
     }
 }
