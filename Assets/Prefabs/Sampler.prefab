@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7320304810776090526}
   - component: {fileID: 7320304810776090527}
   - component: {fileID: 7320304810776090525}
+  - component: {fileID: 8076370445020926790}
   m_Layer: 0
-  m_Name: Piano
+  m_Name: Sampler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,3 +59,15 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7320304810776090520}
   m_Enabled: 0
+--- !u!114 &8076370445020926790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7320304810776090520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7ac56043f3eb14eb1fa05bf244d65e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
