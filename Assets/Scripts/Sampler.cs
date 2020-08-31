@@ -25,7 +25,7 @@ public class Sampler : MonoBehaviour
     private int current = 33;
 
     private float semiFactor;
-    private float volume = 1, fadeStep = 0.03f, fadeInterval = 0.01f;
+    private float volume = 1, fadeStep = 0.05f, fadeInterval = 0.01f;
 
     private static string[] noteNames = {
         "C",

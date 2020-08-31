@@ -1659,7 +1659,7 @@ PrefabInstance:
     - target: {fileID: 7320304810776090527, guid: bca95d4eb1b1a234eb48fa73bc999c6a,
         type: 3}
       propertyPath: sampleName
-      value: piano
+      value: xylophone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bca95d4eb1b1a234eb48fa73bc999c6a, type: 3}
