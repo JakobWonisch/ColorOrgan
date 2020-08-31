@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5633787014135854400}
   - component: {fileID: 5633787014135854403}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Keyboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
