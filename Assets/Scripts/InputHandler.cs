@@ -103,9 +103,9 @@ public class InputHandler : MonoBehaviour
         {
             Rigidbody rb = currentObject.GetComponent<Rigidbody>();
 
-            Debug.Log("Throwing " + (delta / Time.deltaTime));
-            Debug.Log("Test " + (currentObject.transform.position - lastLocation));
-            Debug.Log("time " + Time.deltaTime);
+            // Debug.Log("Throwing " + (delta / Time.deltaTime));
+            // Debug.Log("Test " + (currentObject.transform.position - lastLocation));
+            // Debug.Log("time " + Time.deltaTime);
 
             if (rb == null)
             {
