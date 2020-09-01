@@ -37,7 +37,6 @@ public class CartridgeSlot : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
         Transform otherParent = other.transform.parent;
 
         if (otherParent == null)
@@ -72,7 +71,8 @@ public class CartridgeSlot : MonoBehaviour
         {
             sampler.SetInstrument(current.sampleName, current.prefix);
         }
-        Debug.Log("Set instrument to " + current.sampleName);
+
+        Debug.Log("Cartridge set: " + current.sampleName);
     }
 
     public void UnsetCurrent()

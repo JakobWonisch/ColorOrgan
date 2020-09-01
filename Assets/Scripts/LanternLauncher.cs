@@ -41,7 +41,7 @@ public class LanternLauncher : MonoBehaviour
         // check if there's anything above...
         // if so, move above that point
         RaycastHit[] hits;
-        hits = Physics.RaycastAll(rand - Vector3.up * halfHeight, Vector3.up);
+        hits = Physics.RaycastAll(rand - Vector3.up * halfHeight, Vector3.up, 20);
 
         float maxDistance = -1;
         RaycastHit furthestHit = new RaycastHit();

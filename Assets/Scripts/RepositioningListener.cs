@@ -16,7 +16,7 @@ public class RepositioningListener : MonoBehaviour
     public Transform sustainSwitch, cartridgeSlot, keyboard;
     public Transform sustainTarget, slotTarget, keyboardTarget; // where the objects should be placed
 
-    private float interval = 0.2f;
+    private float interval = 0.35f;
 
     private bool hasClicked;
     private float lastInput;

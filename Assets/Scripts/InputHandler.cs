@@ -182,7 +182,7 @@ public class InputHandler : MonoBehaviour
                     delta = currentObject.transform.position - lastLocation;
 
                 lastLocation = currentObject.transform.position;
-                Debug.Log("Location " + lastLocation);
+                // Debug.Log("Location " + lastLocation);
                 /*}
                 else
                 {
