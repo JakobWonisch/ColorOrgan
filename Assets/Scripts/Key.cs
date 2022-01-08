@@ -32,11 +32,11 @@ public class Key : MonoBehaviour
     {
 
         sampler = GameObject.Find("Sampler").GetComponent<Sampler>();
-        controllerLeft = GameObject.Find("Controller (left)").transform;
-        controllerRight = GameObject.Find("Controller (right)").transform;
+//        controllerLeft = GameObject.Find("Controller (left)").transform;
+//        controllerRight = GameObject.Find("Controller (right)").transform;
 
-        lastLeft = controllerLeft.position;
-        lastRight = controllerRight.position;
+//        lastLeft = controllerLeft.position;
+//        lastRight = controllerRight.position;
 
         meshRenderer = GetComponent<MeshRenderer>();
         materialBase = new Material(meshRenderer.material);
@@ -49,11 +49,11 @@ public class Key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        deltaLeft = controllerLeft.position - lastLeft;
-        lastLeft = controllerLeft.position;
+//        deltaLeft = controllerLeft.position - lastLeft;
+//        lastLeft = controllerLeft.position;
 
-        deltaRight = controllerRight.position - lastRight;
-        lastRight = controllerRight.position;
+//        deltaRight = controllerRight.position - lastRight;
+//        lastRight = controllerRight.position;
        
 
         /*float duration = 2;

@@ -26,7 +26,8 @@ public class MidiPlayer : MonoBehaviour
     {
         PlayMidi(filename);
 
-        playing = false;
+        playing = true;
+        //playing = false;
     }
 
     public void PlayMidi(string name)
